@@ -1,0 +1,18 @@
+<h1>{{ strom.jmeno }}</h1>
+
+{% if strom.obrazky.all %}
+  {% for obrazek in strom.obrazky.all %}
+    <img src="{{ obrazek.obrazek.url }}" alt="Obrázek stromu" style="max-width: 300px; margin: 10px;">
+  {% endfor %}
+{% else %}
+  <p>Žádné obrázky</p>
+{% endif %}
+
+<p><strong>Listy:</strong> {{ strom.listy }}</p>
+<p><strong>Plody:</strong> {{ strom.plody }}</p>
+<p><strong>Kůra:</strong> {{ strom.kura }}</p>
+<p><strong>Tvar koruny:</strong> {{ strom.tvar_koruny }}</p>
+<p><strong>Dřevo:</strong> {{ strom.drevo }}</p>
+<p><strong>Rozpoznávací znaky:</strong> {{ strom.rozpoznavaci_znaky }}</p>
+
+<a href="{% url 'seznam_stromu' %}">Zpět na seznam</a>

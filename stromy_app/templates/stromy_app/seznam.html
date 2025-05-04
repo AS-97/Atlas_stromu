@@ -1,0 +1,6 @@
+<h1>Seznam stromů</h1>
+<ul>
+  {% for strom in stromy %}
+    <li><a href="{% url 'detail_stromu' strom.id %}">{{ strom.jmeno }}</a></li>
+  {% endfor %}
+</ul>
